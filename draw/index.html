@@ -14,13 +14,13 @@
     <article id="article">
         <div class="question">
             <h1>Gambar Yuk, Dan Tebak gambar apa ?</h1>
-            <canvas id="canvas" width="300" height="250" style="background: url(http://farm1.static.flickr.com/91/239595759_3c3626b24a_b.jpg) no-repeat center center; background-size: auto;"></canvas>
+            <canvas id="canvas" width="300" height="250" style="background: url(img/babi.jpg) no-repeat center center; background-size: auto;"></canvas>
         </div>
         <div class="answer">
-            <button onclick="cek('gajah')">Gajah</button>
-            <button onclick="cek('gajah')">Kucing</button>
-            <button onclick="cek('gajah')">Onta</button>
-            <button onclick="cek('gajah')">babi</button>
+            <button onclick="cek('kucing')">Kucing</button>
+            <button onclick="cek('babi')">Babi</button>
+            <button onclick="cek('onta')">Onta</button>
+            <button onclick="cek('gajah')">gajah</button>
         </div>
     </article>
 
@@ -35,13 +35,13 @@
 <script src="sketch.js"></script>
 <script>
 
-    var key = 'gajah';
+    var key = 'babi';
 
     function cek(answer) {
         if(answer == key) {
-            console.log('betul')
+            alert('betul')
         } else {
-            console.log('kurang tepat')
+            alert('kurang tepat')
         }
     }
 
