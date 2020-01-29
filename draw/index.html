@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fun quiz interactive</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <div id="pause"></div>
+    <button id="btnStart" onclick="start()"><img src="img/start.png" width="200px"></button>
+
+    <article id="article">
+        <div class="question">
+            <h1>Gambar Yuk, Dan Tebak gambar apa ?</h1>
+            <canvas id="canvas" width="300" height="250" style="background: url(http://farm1.static.flickr.com/91/239595759_3c3626b24a_b.jpg) no-repeat center center; background-size: auto;"></canvas>
+        </div>
+        <div class="answer">
+            <button onclick="cek('gajah')">Gajah</button>
+            <button onclick="cek('gajah')">Kucing</button>
+            <button onclick="cek('gajah')">Onta</button>
+            <button onclick="cek('gajah')">babi</button>
+        </div>
+    </article>
+
+    <footer>
+        <div class="bg"></div>
+        <img id="btnAnswer" src="img/refresh.png" width="48" onclick="answer()">  
+    </footer>
+
+</body>
+
+<script src="jquery.js"></script>
+<script src="sketch.js"></script>
+<script>
+
+    var key = 'gajah';
+
+    function cek(answer) {
+        if(answer == key) {
+            console.log('betul')
+        } else {
+            console.log('kurang tepat')
+        }
+    }
+
+    function start() {
+        document.getElementById("btnStart").style.display = 'none';
+        document.getElementById("pause").style.display = 'none';
+    }
+
+    $(function() {
+        $('#canvas').sketch({defaultColor: "#ff0"});
+    });
+
+</script>
+</html>
